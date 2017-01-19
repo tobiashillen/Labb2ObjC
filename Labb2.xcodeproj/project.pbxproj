@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B5FFEA31E2FCB7600AE4DB9 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B5FFEA21E2FCB7600AE4DB9 /* Model.m */; };
 		8BE2E2CC1E2E3F8600ACA992 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE2E2CB1E2E3F8600ACA992 /* main.m */; };
 		8BE2E2CF1E2E3F8600ACA992 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE2E2CE1E2E3F8600ACA992 /* AppDelegate.m */; };
 		8BE2E2D21E2E3F8600ACA992 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE2E2D11E2E3F8600ACA992 /* ViewController.m */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B5FFEA11E2FCB7600AE4DB9 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		8B5FFEA21E2FCB7600AE4DB9 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
 		8BE2E2C71E2E3F8600ACA992 /* Labb2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Labb2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BE2E2CB1E2E3F8600ACA992 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8BE2E2CD1E2E3F8600ACA992 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -60,6 +63,8 @@
 			children = (
 				8BE2E2CD1E2E3F8600ACA992 /* AppDelegate.h */,
 				8BE2E2CE1E2E3F8600ACA992 /* AppDelegate.m */,
+				8B5FFEA11E2FCB7600AE4DB9 /* Model.h */,
+				8B5FFEA21E2FCB7600AE4DB9 /* Model.m */,
 				8BE2E2D01E2E3F8600ACA992 /* ViewController.h */,
 				8BE2E2D11E2E3F8600ACA992 /* ViewController.m */,
 				8BE2E2D31E2E3F8600ACA992 /* Main.storyboard */,
@@ -152,6 +157,7 @@
 			files = (
 				8BE2E2D21E2E3F8600ACA992 /* ViewController.m in Sources */,
 				8BE2E2CF1E2E3F8600ACA992 /* AppDelegate.m in Sources */,
+				8B5FFEA31E2FCB7600AE4DB9 /* Model.m in Sources */,
 				8BE2E2CC1E2E3F8600ACA992 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +313,7 @@
 				8BE2E2E01E2E3F8600ACA992 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
