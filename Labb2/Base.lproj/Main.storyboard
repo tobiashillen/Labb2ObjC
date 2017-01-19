@@ -22,44 +22,90 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVm-Ag-rG1">
-                                <rect key="frame" x="16" y="305" width="140" height="61"/>
+                                <rect key="frame" x="16" y="228" width="140" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
                                 <state key="normal" title="Svar nummer 1"/>
+                                <connections>
+                                    <action selector="pressedAnswerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dAU-Sw-vkn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7iJ-FI-DbS">
-                                <rect key="frame" x="164" y="305" width="140" height="60"/>
+                                <rect key="frame" x="164" y="228" width="140" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
                                 <state key="normal" title="Svar nummer 2"/>
+                                <connections>
+                                    <action selector="pressedAnswerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AP5-OC-Tmh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZH-Q2-Qyk">
-                                <rect key="frame" x="16" y="413" width="140" height="66"/>
+                                <rect key="frame" x="16" y="336" width="140" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
                                 <state key="normal" title="Svar nummer 3"/>
+                                <connections>
+                                    <action selector="pressedAnswerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qgZ-6G-AYC"/>
+                                </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Hur många bla bla bla är det bla bla?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EOl-Cr-fpd">
-                                <rect key="frame" x="16" y="81" width="288" height="168"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Hur många bla bla bla är det bla bla?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EOl-Cr-fpd">
+                                <rect key="frame" x="16" y="52" width="288" height="168"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="30"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vu8-Nj-2of">
-                                <rect key="frame" x="164" y="413" width="140" height="66"/>
+                                <rect key="frame" x="164" y="336" width="140" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="15"/>
                                 <state key="normal" title="Svar nummer 4"/>
+                                <connections>
+                                    <action selector="pressedAnswerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3TW-wU-bJM"/>
+                                </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGE-di-U9G">
+                                <rect key="frame" x="106" y="504" width="108" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Nästa fråga">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressedNextQuestionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u7U-w5-0b5"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Antal rätt 0" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iQW-qN-yMi">
+                                <rect key="frame" x="48" y="228" width="225" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="0.11696655041499204" green="0.80210268497467041" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Antal rätt 0" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="C09-S8-ZTL">
+                                <rect key="frame" x="48" y="336" width="225" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.049691020333036739" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="answerText1" destination="ZVm-Ag-rG1" id="RID-mP-578"/>
-                        <outlet property="answerText2" destination="7iJ-FI-DbS" id="zve-Y6-Xor"/>
-                        <outlet property="answerText3" destination="tZH-Q2-Qyk" id="wzk-5i-X7T"/>
-                        <outlet property="answerText4" destination="vu8-Nj-2of" id="wBb-cd-TU3"/>
+                        <outlet property="answerBtn1" destination="ZVm-Ag-rG1" id="fiz-Yh-yL3"/>
+                        <outlet property="answerBtn2" destination="7iJ-FI-DbS" id="l4B-RE-N1H"/>
+                        <outlet property="answerBtn3" destination="tZH-Q2-Qyk" id="tXg-tK-Ywe"/>
+                        <outlet property="answerBtn4" destination="vu8-Nj-2of" id="auI-aB-khm"/>
+                        <outlet property="correctAnswersText" destination="iQW-qN-yMi" id="JSY-Ou-SdU"/>
+                        <outlet property="incorrectAnswersText" destination="C09-S8-ZTL" id="EdX-oq-i0E"/>
+                        <outlet property="nextQuestionBtn" destination="sGE-di-U9G" id="cy6-Xc-Rsq"/>
                         <outlet property="questionText" destination="EOl-Cr-fpd" id="O21-Nt-nJh"/>
                     </connections>
                 </viewController>

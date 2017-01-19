@@ -8,9 +8,10 @@
 
 #import "Model.h"
 @interface Model ()
-@property (nonatomic) int numbersOfCorrectGuesses;
-@property (nonatomic) int gamesPlayed;
+@property (nonatomic) int numberOfRoundsPlayed;
+@property (nonatomic) int numberOfRoundsLeft;
 @property (nonatomic) NSMutableArray* allQuestions;
+@property (nonatomic) NSMutableArray* questions;
 @end
 
 @implementation Model
@@ -18,11 +19,14 @@
 -(instancetype)init {
     self = [super init];
     if (self) {
+        self.isGameActive = YES;
+        self.numberOfCorrectGuesses = 0;
+        self.numberOfRoundsPlayed = 0;
+        self.numberOfRoundsLeft = 5;
         self.questions = [[NSMutableArray alloc] init];
         [self setUpAllQuestions];
-        [self setUpFiveRandomQuestions];
+        [self setUpRandomQuestionsForOneGame];
         self.currentQuestion = self.questions[0];
-        self.numbersOfCorrectGuesses =0;
     }
     return self;
 }
@@ -83,23 +87,37 @@
     self.allQuestions = [NSMutableArray arrayWithObjects: q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, nil];
 }
 
-- (void)setUpFiveRandomQuestions {
+- (void)setUpRandomQuestionsForOneGame {
     
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < self.numberOfRoundsLeft; i++) {
         int random = arc4random() % self.allQuestions.count;
         NSDictionary *randomQuestion = self.allQuestions[random];
         self.questions[i] = randomQuestion;
         [self.allQuestions removeObjectAtIndex:i];
-        NSLog(@"%d" ,[self.allQuestions count ]);
     }
 }
 
-- (BOOL)isAnswerCorrect:(NSString*)answere {
-    if ([self.currentQuestion[@"Correct"] isEqualToString:answere]){
-        self.numbersOfCorrectGuesses++;
+
+- (BOOL)isAnswerCorrect:(NSString*)answer {
+    
+    self.numberOfRoundsLeft--;
+    self.numberOfRoundsPlayed++;
+    if ([self.currentQuestion[@"Correct"] isEqualToString:answer]){
+        self.numberOfCorrectGuesses++;
+        [self changeCurrentQuestion];
         return true;
     } else {
+        self.numberOfIncorrectGuesses++;
+        [self changeCurrentQuestion];
         return false;
+    }
+}
+
+-(void)changeCurrentQuestion {
+    if (self.numberOfRoundsLeft > 0){
+        self.currentQuestion = self.questions[self.numberOfRoundsPlayed];
+    } else {
+        self.isGameActive = NO;
     }
 }
 

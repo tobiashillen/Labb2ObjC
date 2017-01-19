@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface Model : NSObject
-@property (nonatomic) NSMutableArray* questions;
 @property (nonatomic) NSDictionary* currentQuestion;
+@property (nonatomic) BOOL isGameActive;
+@property (nonatomic) int numberOfCorrectGuesses;
+@property (nonatomic) int numberOfIncorrectGuesses;
+- (BOOL)isAnswerCorrect:(NSString*)answer;
 @end
