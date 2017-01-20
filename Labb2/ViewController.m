@@ -11,6 +11,8 @@
 
 @interface ViewController ()
 @property (nonatomic) Model *game;
+@property (weak, nonatomic) IBOutlet UITextView *roundResultText;
+@property (strong, nonatomic) IBOutlet UIView *bgView;
 @property (weak, nonatomic) IBOutlet UITextView *questionText;
 @property (weak, nonatomic) IBOutlet UIButton *answerBtn1;
 @property (weak, nonatomic) IBOutlet UIButton *answerBtn2;
@@ -27,32 +29,55 @@
 
 - (IBAction)pressedAnswerButton:(id)sender {
     UIButton *pressedBtn = (UIButton *)sender;
+    self.roundResultText.hidden = NO;
     if ([self.game isAnswerCorrect:pressedBtn.titleLabel.text]) {
-        [pressedBtn setTitle:@"Rätt!" forState:UIControlStateNormal];
+        self.bgView.backgroundColor = [UIColor greenColor];
+        self.questionText.backgroundColor = [UIColor greenColor];
+        self.roundResultText.text = @"Rätt!";
+        self.roundResultText.backgroundColor = [UIColor greenColor];
     } else {
-        [pressedBtn setTitle:@"Fel!" forState:UIControlStateNormal];
-
+        self.bgView.backgroundColor = [UIColor redColor];
+        self.questionText.backgroundColor = [UIColor redColor];
+        self.roundResultText.text = @"Fel!";
+        self.roundResultText.backgroundColor = [UIColor redColor];
     }
     [self disableAllAnswerButtons];
     self.nextQuestionBtn.hidden = NO;
 }
-//Kolla om det var rätt och om det finns en fråga till, Displaya ny fråga
+
 - (IBAction)pressedNextQuestionButton:(id)sender {
-    if (self.game.isGameActive) {
+    self.roundResultText.hidden = YES;
+    if ([[self.nextQuestionBtn currentTitle] isEqualToString:@"Nästa fråga"] || [[self.nextQuestionBtn currentTitle] isEqualToString:@"Visa resultat"]) {
+        if (self.game.isGameActive) {
+            if ([self.game isThisTheLastQuestion]) {
+                [self.nextQuestionBtn setTitle:@"Visa resultat" forState:UIControlStateNormal];
+            }
+            [self displayQuestion];
+            [self enableAllAnswerButtons];
+        } else {
+            [self hideAllAnswerButtons];
+            [self setUpAndShowResultText];
+            [self.nextQuestionBtn setTitle:@"Spela igen" forState:UIControlStateNormal];
+        }
+    } else {
+        [self hideResultText];
+        [self startNewGame];
         [self displayQuestion];
         [self enableAllAnswerButtons];
-    } else {
-        [self hideAllAnswerButtons];
-        [self setUpAndShowResultText];
-        [self.nextQuestionBtn setTitle:@"Spela igen" forState:UIControlStateNormal];
+        [self showAllAnswerButtons];
     }
+    self.bgView.backgroundColor = [UIColor yellowColor];
+    self.questionText.backgroundColor = [UIColor yellowColor];
+
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.roundResultText.hidden = YES;
+    self.correctAnswersText.backgroundColor = [UIColor yellowColor];
+    self.incorrectAnswersText.backgroundColor = [UIColor yellowColor];
     [self hideResultText];
-    self.game = [[Model alloc]init];
-    [self displayQuestion];
+    [self startNewGame];
 }
 
 
@@ -62,11 +87,18 @@
 }
 
 - (void)displayQuestion {
+    NSMutableArray *randomAnswers = [NSMutableArray arrayWithObjects:self.game.currentQuestion[@"Correct"], self.game.currentQuestion[@"Wrong1"], self.game.currentQuestion[@"Wrong2"], self.game.currentQuestion[@"Wrong3"], self.game.currentQuestion[@"Wrong4"], nil];
+
+
+    for (int i = 0; i < randomAnswers.count; i++) {
+        int n = (arc4random() % (randomAnswers.count - i) + i);
+        [randomAnswers exchangeObjectAtIndex:i withObjectAtIndex:n];
+    }
+    [self.answerBtn1 setTitle:randomAnswers[0] forState:UIControlStateNormal];
+    [self.answerBtn2 setTitle:randomAnswers[1] forState:UIControlStateNormal];
+    [self.answerBtn3 setTitle:randomAnswers[2] forState:UIControlStateNormal];
+    [self.answerBtn4 setTitle:randomAnswers[3] forState:UIControlStateNormal];
     self.questionText.text = self.game.currentQuestion[@"Question"];
-    [self.answerBtn1 setTitle:self.game.currentQuestion[@"Correct"] forState:UIControlStateNormal];
-    [self.answerBtn2 setTitle:self.game.currentQuestion[@"Wrong1"] forState:UIControlStateNormal];
-    [self.answerBtn3 setTitle:self.game.currentQuestion[@"Wrong2"] forState:UIControlStateNormal];
-    [self.answerBtn4 setTitle:self.game.currentQuestion[@"Wrong3"] forState:UIControlStateNormal];
     self.nextQuestionBtn.hidden = YES;
 }
 
@@ -90,10 +122,22 @@
     self.answerBtn3.hidden = YES;
     self.answerBtn4.hidden = YES;
 }
+- (void)showAllAnswerButtons {
+    self.answerBtn1.hidden = NO;
+    self.answerBtn2.hidden = NO;
+    self.answerBtn3.hidden = NO;
+    self.answerBtn4.hidden = NO;
+}
 
 - (void)hideResultText {
     self.correctAnswersText.hidden = YES;
     self.incorrectAnswersText.hidden = YES;
+}
+
+- (void)startNewGame {
+    self.game = [[Model alloc]init];
+    [self.nextQuestionBtn setTitle:@"Nästa fråga" forState:UIControlStateNormal];
+    [self displayQuestion];
 }
 
 - (void)setUpAndShowResultText {

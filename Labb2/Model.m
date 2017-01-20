@@ -33,21 +33,21 @@
 
 
 -(void)setUpAllQuestions {
-    NSDictionary* q1 = @{@"Question":@"Vad heter Englands huvudstad1?",
-                         @"Correct":@"London",
-                         @"Wrong1":@"Madrid",
-                         @"Wrong2":@"New York",
-                         @"Wrong3":@"Oslo"};
-    NSDictionary* q2 = @{@"Question":@"Vad heter Englands huvudstad2?",
-                         @"Correct":@"London",
-                         @"Wrong1":@"Madrid",
-                         @"Wrong2":@"New York",
-                         @"Wrong3":@"Oslo"};
-    NSDictionary* q3 = @{@"Question":@"Vad heter Englands huvudstad?3",
-                         @"Correct":@"London",
-                         @"Wrong1":@"Madrid",
-                         @"Wrong2":@"New York",
-                         @"Wrong3":@"Oslo"};
+    NSDictionary* q1 = @{@"Question":@"Vilket år släpptes det första Grand Theft Auto-spelet ut?",
+                         @"Correct":@"1997",
+                         @"Wrong1":@"2002",
+                         @"Wrong2":@"1982",
+                         @"Wrong3":@"1992"};
+    NSDictionary* q2 = @{@"Question":@"Vad heter antagonisten i Mega Man-serien till NES?",
+                         @"Correct":@"Dr. Wily",
+                         @"Wrong1":@"Bowser",
+                         @"Wrong2":@"Wicked Professor",
+                         @"Wrong3":@"Cobra Kai"};
+    NSDictionary* q3 = @{@"Question":@"Vad heter Nintendos konsoll som släpps under 2017?",
+                         @"Correct":@"Nintendo Switch",
+                         @"Wrong1":@"Super Nintendo",
+                         @"Wrong2":@"Nintendo Go",
+                         @"Wrong3":@"Mega Nintendo"};
     NSDictionary* q4 = @{@"Question":@"Vad heter Englands huvudstad?4",
                          @"Correct":@"London",
                          @"Wrong1":@"Madrid",
@@ -102,6 +102,11 @@
     
     self.numberOfRoundsLeft--;
     self.numberOfRoundsPlayed++;
+    
+    if (self.numberOfRoundsLeft <= 0) {
+        self.isGameActive = NO;
+    }
+    
     if ([self.currentQuestion[@"Correct"] isEqualToString:answer]){
         self.numberOfCorrectGuesses++;
         [self changeCurrentQuestion];
@@ -113,12 +118,14 @@
     }
 }
 
--(void)changeCurrentQuestion {
-    if (self.numberOfRoundsLeft > 0){
+- (void)changeCurrentQuestion {
+    if (self.isGameActive){
         self.currentQuestion = self.questions[self.numberOfRoundsPlayed];
-    } else {
-        self.isGameActive = NO;
     }
+}
+
+- (BOOL)isThisTheLastQuestion {
+    return (self.numberOfRoundsLeft == 1);
 }
 
 @end

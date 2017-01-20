@@ -14,4 +14,5 @@
 @property (nonatomic) int numberOfCorrectGuesses;
 @property (nonatomic) int numberOfIncorrectGuesses;
 - (BOOL)isAnswerCorrect:(NSString*)answer;
+- (BOOL)isThisTheLastQuestion;
 @end
