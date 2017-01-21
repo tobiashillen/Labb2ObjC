@@ -32,14 +32,10 @@
     self.roundResultText.hidden = NO;
     if ([self.game isAnswerCorrect:pressedBtn.titleLabel.text]) {
         self.bgView.backgroundColor = [UIColor greenColor];
-        self.questionText.backgroundColor = [UIColor greenColor];
         self.roundResultText.text = @"Rätt!";
-        self.roundResultText.backgroundColor = [UIColor greenColor];
     } else {
         self.bgView.backgroundColor = [UIColor redColor];
-        self.questionText.backgroundColor = [UIColor redColor];
         self.roundResultText.text = @"Fel!";
-        self.roundResultText.backgroundColor = [UIColor redColor];
     }
     [self disableAllAnswerButtons];
     self.nextQuestionBtn.hidden = NO;
@@ -67,15 +63,11 @@
         [self showAllAnswerButtons];
     }
     self.bgView.backgroundColor = [UIColor yellowColor];
-    self.questionText.backgroundColor = [UIColor yellowColor];
-
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.roundResultText.hidden = YES;
-    self.correctAnswersText.backgroundColor = [UIColor yellowColor];
-    self.incorrectAnswersText.backgroundColor = [UIColor yellowColor];
     [self hideResultText];
     [self startNewGame];
 }

@@ -48,41 +48,41 @@
                          @"Wrong1":@"Super Nintendo",
                          @"Wrong2":@"Nintendo Go",
                          @"Wrong3":@"Mega Nintendo"};
-    NSDictionary* q4 = @{@"Question":@"Vad heter Englands huvudstad?4",
-                         @"Correct":@"London",
-                         @"Wrong1":@"Madrid",
-                         @"Wrong2":@"New York",
-                         @"Wrong3":@"Oslo"};
-    NSDictionary* q5 = @{@"Question":@"Vad heter Englands huvudstad?5",
-                         @"Correct":@"London",
-                         @"Wrong1":@"Madrid",
-                         @"Wrong2":@"New York",
-                         @"Wrong3":@"Oslo"};
-    NSDictionary* q6 = @{@"Question":@"Vad heter Englands huvudstad?6",
-                         @"Correct":@"London",
-                         @"Wrong1":@"Madrid",
-                         @"Wrong2":@"New York",
-                         @"Wrong3":@"Oslo"};
-    NSDictionary* q7 = @{@"Question":@"Vad heter Englands huvudstad?7",
-                         @"Correct":@"London",
-                         @"Wrong1":@"Madrid",
-                         @"Wrong2":@"New York",
-                         @"Wrong3":@"Oslo"};
-    NSDictionary* q8 = @{@"Question":@"Vad heter Englands huvudstad?8",
-                         @"Correct":@"London",
-                         @"Wrong1":@"Madrid",
-                         @"Wrong2":@"New York",
-                         @"Wrong3":@"Oslo"};
-    NSDictionary* q9 = @{@"Question":@"Vad heter Englands huvudstad9?",
-                         @"Correct":@"London",
-                         @"Wrong1":@"Madrid",
-                         @"Wrong2":@"New York",
-                         @"Wrong3":@"Oslo"};
-    NSDictionary* q10 = @{@"Question":@"Vad heter Englands huvudstad10?",
-                         @"Correct":@"London",
-                         @"Wrong1":@"Madrid",
-                         @"Wrong2":@"New York",
-                         @"Wrong3":@"Oslo"};
+    NSDictionary* q4 = @{@"Question":@"Vilket spel kom först?",
+                         @"Correct":@"Mega Man 2",
+                         @"Wrong1":@"Super Metroid",
+                         @"Wrong2":@"Sonic the Hedgehog",
+                         @"Wrong3":@"Metal Gear Solid"};
+    NSDictionary* q5 = @{@"Question":@"Vilken spelkonsol kom först?",
+                         @"Correct":@"Sega Master System",
+                         @"Wrong1":@"Nintendo 64",
+                         @"Wrong2":@"Sega Saturn",
+                         @"Wrong3":@"Playstation"};
+    NSDictionary* q6 = @{@"Question":@"Vad händer om Super Mario tar en grön svamp?",
+                         @"Correct":@"Han får ett extraliv",
+                         @"Wrong1":@"Han blir liten",
+                         @"Wrong2":@"Han dör",
+                         @"Wrong3":@"Han blir odödlig"};
+    NSDictionary* q7 = @{@"Question":@"Vad var undertiteln till Turtles IV till Super Nintendo?",
+                         @"Correct":@"Turtles in Time",
+                         @"Wrong1":@"Rumble in Manhattan",
+                         @"Wrong2":@"Mutant Madness",
+                         @"Wrong3":@"Splinter's Revenge"};
+    NSDictionary* q8 = @{@"Question":@"Vem är sista bossen i Street Fighter II till Super Nintendo?",
+                         @"Correct":@"M. Bison",
+                         @"Wrong1":@"Ruy",
+                         @"Wrong2":@"Ganon",
+                         @"Wrong3":@"Chun-Li"};
+    NSDictionary* q9 = @{@"Question":@"Vad heter det klassiska ryska pusselspelet?",
+                         @"Correct":@"Tetris",
+                         @"Wrong1":@"Metric",
+                         @"Wrong2":@"Bust-a-Move",
+                         @"Wrong3":@"Dr. Mario"};
+    NSDictionary* q10 = @{@"Question":@"Vilken färg har Pac-Man?",
+                         @"Correct":@"Gul",
+                         @"Wrong1":@"Grön",
+                         @"Wrong2":@"Blå",
+                         @"Wrong3":@"Röd"};
     
     self.allQuestions = [NSMutableArray arrayWithObjects: q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, nil];
 }
@@ -93,7 +93,7 @@
         int random = arc4random() % self.allQuestions.count;
         NSDictionary *randomQuestion = self.allQuestions[random];
         self.questions[i] = randomQuestion;
-        [self.allQuestions removeObjectAtIndex:i];
+        [self.allQuestions removeObjectAtIndex:random];
     }
 }
 

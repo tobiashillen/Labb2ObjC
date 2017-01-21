@@ -22,36 +22,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVm-Ag-rG1">
-                                <rect key="frame" x="16" y="228" width="140" height="60"/>
+                                <rect key="frame" x="16" y="200" width="288" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
                                 <state key="normal" title="Svar nummer 1"/>
                                 <connections>
                                     <action selector="pressedAnswerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dAU-Sw-vkn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7iJ-FI-DbS">
-                                <rect key="frame" x="164" y="228" width="140" height="60"/>
+                                <rect key="frame" x="16" y="258" width="288" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
                                 <state key="normal" title="Svar nummer 2"/>
                                 <connections>
                                     <action selector="pressedAnswerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AP5-OC-Tmh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZH-Q2-Qyk">
-                                <rect key="frame" x="16" y="336" width="140" height="66"/>
+                                <rect key="frame" x="16" y="316" width="288" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                <color key="backgroundColor" red="1" green="0.98564441616148957" blue="0.0063155989119169087" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
                                 <state key="normal" title="Svar nummer 3"/>
                                 <connections>
                                     <action selector="pressedAnswerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qgZ-6G-AYC"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Hur många bla bla bla är det bla bla?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EOl-Cr-fpd">
-                                <rect key="frame" x="16" y="52" width="288" height="168"/>
+                                <rect key="frame" x="16" y="52" width="288" height="116"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                     <bool key="isElement" value="YES"/>
@@ -60,9 +61,9 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vu8-Nj-2of">
-                                <rect key="frame" x="164" y="336" width="140" height="66"/>
+                                <rect key="frame" x="16" y="374" width="288" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="20"/>
                                 <state key="normal" title="Svar nummer 4"/>
                                 <connections>
                                     <action selector="pressedAnswerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3TW-wU-bJM"/>
@@ -80,17 +81,17 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Antal rätt 0" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="iQW-qN-yMi">
-                                <rect key="frame" x="48" y="228" width="225" height="64"/>
+                                <rect key="frame" x="48" y="302" width="225" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.98441392183303833" blue="0.0034517450258135796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.98564441616148957" blue="0.0063155989119169087" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.11696655041499204" green="0.80210268497467041" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Antal rätt 0" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="C09-S8-ZTL">
-                                <rect key="frame" x="48" y="336" width="225" height="64"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Antal fel 0" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="C09-S8-ZTL">
+                                <rect key="frame" x="48" y="244" width="225" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.98441392183303833" blue="0.0034517450258135796" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.98441392183303833" blue="0.0034517450258135796" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.049691020333036739" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -98,8 +99,8 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Fel" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Snk-eW-QV6">
                                 <rect key="frame" x="48" y="280" width="225" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="MyanmarSangamMN" family="Myanmar Sangam MN" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
